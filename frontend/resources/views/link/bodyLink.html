@@ -1,0 +1,29 @@
+{{define "bodyLink"}}
+    <script src="/assets/jquery/dist/jquery.min.js"></script>
+
+    <script src="/assets/datatables.net/js/dataTables.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#myTable").DataTable({
+          pagingType: "full_numbers", // Penomoran halaman lengkap
+          lengthMenu: [5, 10, 25, 50], // Pilihan jumlah data per halaman
+          language: {
+            url: "https://cdn.datatables.net/plug-ins/1.13.7/i18n/id.json", // Translate ke Bahasa Indonesia
+          },
+          order: [[0, "desc"]], // Urutkan berdasarkan ID paling baru
+        });
+
+      
+      });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
+      type="module"
+    ></script>
+
+    <script defer src="/assets/alpinejs/dist/cdn.min.js"></script>
+
+    
+{{end}}

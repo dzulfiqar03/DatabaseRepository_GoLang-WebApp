@@ -1,0 +1,49 @@
+{{define "content_home"}}
+<div class="mx-auto p-6">
+  <div
+    x-data="{ step: 1 }"
+    class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8"
+  >
+    <div class="flex items-center gap-4 mb-12 relative">
+      <!-- <div class="absolute top-5 left-0 w-full h-0.5 bg-gray-100 -z-0"></div>
+            <div class="absolute top-5 left-0 h-0.5 bg-emerald-500 transition-all duration-500 -z-0"
+                 :style="'width: ' + (step === 1 ? '0%' : '100%')"></div> -->
+
+      <label class="block text-sm font-medium text-gray-700 mb-2">Pilih Database:</label>
+    <select 
+        x-model.number="step">
+      
+        {{range $index, $val := .sections}} {{ $stepNum := add $index 1 }}
+        <option value="{{$stepNum}}">{{$val.TitleTable}}</option>
+        {{end}}
+        
+      
+      </select>
+    </div>
+
+    <div class=" bg-gray-50/50 rounded-xl ">
+      {{range $index, $section := .sections}} {{ $stepNum := add $index 1 }}
+
+      <div
+        x-show="step === {{ $stepNum }}"
+  
+      >
+        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+          
+
+          {{if eq $.page "db-sibanksa"}}
+          {{template "data" .}}
+
+          {{else if eq $.page "db-seeU"}}
+    {{template "data-seeu" .}}
+
+    {{else if eq $.page "db-givent"}}
+    {{template "data-givent" .}}
+          {{end}}
+        </div>
+      </div>
+      {{end}}
+    </div>
+  </div>
+</div>
+{{end}}
