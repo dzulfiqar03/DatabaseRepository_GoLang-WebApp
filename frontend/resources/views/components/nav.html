@@ -36,7 +36,7 @@
         </div>
 
         <h1
-          class="text-xl font-semibold tracking-wide text-gray-800 dark:text-gray-100 transition-all duration-300 font-[Poppins]"
+          class="text-xl font-semibold tracking-wide text-gray-800 dark:text-gray-100 transition-all duration-300 font-[Montserrat]"
           x-show="sidebarExpanded"
           x-transition.opacity.scale
         >
@@ -383,7 +383,10 @@
         </header>
 
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-          {{if eq .page "Dashboard"}} {{else}} {{template "content_home" .}}
+          {{if eq .page "Dashboard"}} 
+          {{template "content_home" .}}
+          {{else}}
+           {{template "content_home" .}}
           {{end}}
         </div>
       </div>

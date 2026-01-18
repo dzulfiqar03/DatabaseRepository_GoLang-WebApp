@@ -44,6 +44,8 @@
     {{template "data-netabot" .}}
     {{else if eq $.page "db-libraryis"}}
     {{template "data-libraryis" .}}
+    {{else if eq $.page "Dashboard"}}
+    {{template "dashboard" .}}
           {{end}}
         </div>
       </div>
