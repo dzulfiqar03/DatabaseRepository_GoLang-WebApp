@@ -27,77 +27,500 @@
         <form action="" id="formUser">
           <div class="grid grid-cols-1 gap-x-6 gap-y-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
+              {{ if eq .Title "data-User"}}
               <div class="flex flex-col gap-2">
-                <label class="text-sm font-semibold text-gray-700"
-                  >Email Address</label
+                <label for="email" class="text-sm font-medium text-gray-700"
+                  >Email</label
                 >
                 <input
                   type="email"
                   name="email"
-                  class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-500 outline-none"
-                  placeholder="user@mail.com"
+                  id="email"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Masukkan email"
                   required
                 />
               </div>
               <div class="flex flex-col gap-2">
-                <label class="text-sm font-semibold text-gray-700"
+                <label for="username" class="text-sm font-medium text-gray-700"
+                  >Username</label
+                >
+                <input
+                  type="text"
+                  name="username"
+                  id="username"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Masukkan username"
+                  required
+                />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label for="full_name" class="text-sm font-medium text-gray-700"
                   >Full Name</label
                 >
                 <input
                   type="text"
-                  name="fullname"
-                  class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-500 outline-none"
-                  placeholder="Nama Lengkap"
+                  name="full_name"
+                  id="full_name"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Masukkan full name"
                   required
                 />
               </div>
-
               <div class="flex flex-col gap-2">
-                <label class="text-sm font-semibold text-gray-700"
+                <label for="gender" class="text-sm font-medium text-gray-700"
+                  >Gender</label
+                >
+
+                <input type="radio" name="gender" value="Male" class="mr-2" />
+                <label
+                  for="gender_male"
+                  class="text-sm font-medium text-gray-700 mr-4"
+                  >Laki-laki</label
+                >
+                <input type="radio" name="gender" value="Female" class="mr-2" />
+                <label
+                  for="gender_female"
+                  class="text-sm font-medium text-gray-700"
+                  >Perempuan</label
+                >
+                />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label for="address" class="text-sm font-medium text-gray-700"
                   >Address</label
                 >
                 <input
                   type="text"
                   name="address"
-                  class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-500 outline-none"
-                  placeholder="Alamat"
-                  required
-                />
-              </div>
-
-              <div class="flex flex-col gap-2">
-                <label class="text-sm font-semibold text-gray-700"
-                  >Nomor Telepon</label
-                >
-                <input
-                  type="text"
-                  name="telephone"
-                  class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-500 outline-none"
-                  placeholder="Nomor Telepon"
+                  id="address"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Masukkan address"
                   required
                 />
               </div>
 
               <div class="flex flex-col gap-2">
                 <label
-                  class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1.5 ml-1"
+                  for="telephone_number"
+                  class="text-sm font-medium text-gray-700"
+                  >Telephone Number</label
+                >
+                <input
+                  type="text"
+                  name="telephone_number"
+                  id="telephone_number"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Masukkan telephone number"
+                  required
+                />
+              </div>
+
+              <div class="flex flex-col gap-2">
+                <label for="status" class="text-sm font-medium text-gray-700"
                   >Status</label
                 >
                 <select
-                  id="status"
                   name="status"
-                  class="w-full h-11 rounded-xl border-gray-200 bg-gray-50 dark:bg-gray-800 dark:text-white text-sm pl-5 focus:ring-4 focus:ring-emerald-500/10 transition-all"
+                  id="status"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  required
                 >
-                  <option value="">Pilih Status</option>
-
-                  <option value="Pending">Pending</option>
-                  <option value="Pengajuan Verifikasi">
-                    Pengajuan Verifikasi
-                  </option>
-                  <option value="Disetujui">Disetujui</option>
-                  <option value="Tidak Disetujui">Tidak Disetujui</option>
+                  <option value="" disabled selected>Pilih status</option>
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
                 </select>
               </div>
+
+              <div class="flex flex-col gap-2">
+                <label for="rt" class="text-sm font-medium text-gray-700"
+                  >RT</label
+                >
+                <select
+                  name="rt"
+                  id="rt"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  required
+                >
+                  <option value="" disabled selected>Pilih RT</option>
+                  <option value="1">RT 1</option>
+                  <option value="2">RT 2</option>
+                  <option value="3">RT 3</option>
+                  <option value="4">RT 4</option>
+                  <option value="5">RT 5</option>
+                  <option value="6">RT 6</option>
+                  <option value="7">RT 7</option>
+                  <option value="8">RT 8</option>
+                </select>
+              </div>
+
+              {{else if eq .Title "data-Roles"}}
+              <div class="flex flex-col gap-2">
+                <label for="role" class="text-sm font-medium text-gray-700"
+                  >Role</label
+                >
+                <select
+                  name="role"
+                  id="role"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  required
+                >
+                  <option value="" disabled selected>Pilih Role</option>
+                  <option value="Admin">Admin</option>
+                  <option value="User">User</option>
+                </select>
+              </div>
+              {{else if eq .Title "data-Gender"}}
+              <div class="flex flex-col gap-2">
+                <label
+                  for="
+gender"
+                  class="text-sm font-medium text-gray-700"
+                >
+                  Gender</label
+                >
+
+                <input type="radio" name="gender" value="Male" class="mr-2" />
+                <label
+                  for="gender_male"
+                  class="text-sm font-medium text-gray-700 mr-4"
+                  >Laki-laki</label
+                >
+
+                <input type="radio" name="gender" value="Female" class="mr-2" />
+                <label
+                  for="gender_female"
+                  class="text-sm font-medium text-gray-700"
+                  >Perempuan</label
+                >
+              </div>
+
+              {{else if eq .Title "data-Banks"}}
+              <div class="flex flex-col gap-2">
+                <label for="logo" class="text-sm font-medium text-gray-700"
+                  >Logo URL</label
+                >
+                <input
+                  type="file"
+                  name="logo"
+                  id="logo"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Masukkan logo URL"
+                  required
+                />
+              </div>
+
+              <div class="flex flex-col gap-2">
+                <label
+                  for="transfer_code"
+                  class="text-sm font-medium text-gray-700"
+                  >Transfer Code</label
+                >
+                <input
+                  type="text"
+                  name="transfer_code"
+                  id="transfer_code"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Masukkan transfer code"
+                  required
+                />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label for="name" class="text-sm font-medium text-gray-700"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Masukkan name"
+                  required
+                />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label
+                  for="short_name"
+                  class="text-sm font-medium text-gray-700"
+                  >Short Name</label
+                >
+                <input
+                  type="text"
+                  name="short_name"
+                  id="short_name"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Masukkan short name"
+                  required
+                />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label
+                  for="swift_code"
+                  class="text-sm font-medium text-gray-700"
+                  >Swift Code</label
+                >
+                <input
+                  type="text"
+                  name="swift_code"
+                  id="swift_code"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Masukkan swift code"
+                  required
+                />
+              </div>
+
+              {{else if eq .Title "data-RT"}}
+
+              <div class="flex flex-col gap-2">
+                <label for="rt" class="text-sm font-medium text-gray-700"
+                  >RT</label
+                >
+                <input
+                  type="text"
+                  name="rt"
+                  id="rt"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Masukkan RT"
+                  required
+                />
+              </div>
+
+              {{else if eq .Title "data-Document"}}
+              <div class="flex flex-col gap-2">
+                <label for="document" class="text-sm font-medium text-gray-700"
+                  >Document Upload</label
+                >
+                <input
+                  type="file"
+                  name="document"
+                  id="document"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Upload document"
+                  required
+                />
+              </div>
+              <input type="hidden" name="id_user" value="" />
+
+              {{else if eq .Title "data-Evidence"}}
+              <div class="flex flex-col gap-2">
+                <label for="evidence" class="text-sm font-medium text-gray-700"
+                  >Evidence Upload</label
+                >
+                <input
+                  type="file"
+                  name="evidence"
+                  id="evidence"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Upload evidence"
+                  required
+                />
+              </div>
+              <input type="hidden" name="id_user" value="" />
+              {{else if eq .Title "data-Sampah"}}
+              <div class="flex flex-col gap-2">
+                <label
+                  for="nama_sampah"
+                  class="text-sm font-medium text-gray-700"
+                  >Nama Sampah</label
+                >
+                <input
+                  type="text"
+                  name="nama_sampah"
+                  id="nama_sampah"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Masukkan nama sampah"
+                  required
+                />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label for="harga" class="text-sm font-medium text-gray-700"
+                  >Harga</label
+                >
+                <input
+                  type="number"
+                  name="harga"
+                  id="harga"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Masukkan harga"
+                  required
+                />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label for="satuan" class="text-sm font-medium text-gray-700"
+                  >Satuan</label
+                >
+                <input
+                  type="text"
+                  name="satuan"
+                  id="satuan"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Masukkan satuan"
+                  required
+                />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label for="kategori" class="text-sm font-medium text-gray-700"
+                  >Kategori</label
+                >
+                <select
+                  name="kategori"
+                  id="kategori"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  required
+                >
+                  <option value="" disabled selected>Pilih Kategori</option>
+                  <option value="Organik">Organik</option>
+                  <option value="Anorganik">Anorganik</option>
+                </select>
+              </div>
+
+              <input type="hidden" name="rt_id" value="" />
+              <input type="hidden" name="id_user" value="" />
+              {{else if eq .Title "data-Jadwal"}}
+              <div class="flex flex-col gap-2">
+                <label
+                  for="tanggal_pelaksanaan"
+                  class="text-sm font-medium text-gray-700"
+                  >Tanggal Pelaksanaan</label
+                >
+                <input
+                  type="date"
+                  name="tanggal_pelaksanaan"
+                  id="tanggal_pelaksanaan"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Masukkan tanggal pelaksanaan"
+                  required
+                />
+              </div>
+
+              <input type="hidden" name="rt_id" value="" />
+              <input type="hidden" name="id_user" value="" />
+              {{else if eq .Title "data-Kepengurusan"}}
+
+              <div class="flex flex-col gap-2">
+                <label for="full_name" class="text-sm font-medium text-gray-700"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  name="full_name"
+                  id="full_name"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Masukkan full name"
+                  required
+                />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label for="address" class="text-sm font-medium text-gray-700"
+                  >Address</label
+                >
+                <input
+                  type="text"
+                  name="address"
+                  id="address"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Masukkan address"
+                  required
+                />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label
+                  for="telephone_number"
+                  class="text-sm font-medium text-gray-700"
+                  >Telephone Number</label
+                >
+                <input
+                  type="text"
+                  name="telephone_number"
+                  id="telephone_number"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Masukkan telephone number"
+                  required
+                />
+              </div>
+
+              <div class="flex flex-col gap-2">
+                <label for="divisi" class="text-sm font-medium text-gray-700"
+                  >Divisi</label
+                >
+                <input
+                  type="text"
+                  name="divisi"
+                  id="divisi"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Masukkan divisi"
+                  required
+                />
+              </div>
+              <input type="hidden" name="id_gender" value="" />
+              <input type="hidden" name="id_user" value="" />
+              {{else if eq .Title "data-UserTransaction"}}
+
+              <div class="flex flex-col gap-2">
+                <label
+                  for="transaction_amount"
+                  class="text-sm font-medium text-gray-700"
+                  >Transaction Amount</label
+                >
+                <input
+                  type="number"
+                  name="transaction_amount"
+                  id="transaction_amount"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Masukkan transaction amount"
+                  required
+                />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label
+                  for="transaction_date"
+                  class="text-sm font-medium text-gray-700"
+                  >Transaction Date</label
+                >
+                <input
+                  type="date"
+                  name="transaction_date"
+                  id="transaction_date"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Masukkan transaction date"
+                  required
+                />
+              </div>
+              <input type="hidden" name="id_user" value="" />
+              <input type="hidden" name="id_banks" value="" />
+              <input
+                type="hidden"
+                name="id_pencatatansetoran"
+                value=""
+              />
+              <div class="flex flex-col gap-2">
+                <label for="status" class="text-sm font-medium text-gray-700"
+                  >Bukti Pembayaran</label
+                >
+                <input
+                  type="file"
+                  name="bukti_pembayaran"
+                  id="bukti_pembayaran"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Upload bukti pembayaran"
+                  required
+                />
+              </div>
+
+              <div class="flex flex-col gap-2">
+                <label for="status" class="text-sm font-medium text-gray-700"
+                  >Nomor Rekening</label
+                >
+                <input
+                  type="text"
+                  name="nomor_rekening"
+                  id="nomor_rekening"
+                  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  placeholder="Masukkan nomor rekening"
+                  required
+                />
+              </div>
+              {{end}}
             </div>
           </div>
 
@@ -501,7 +924,7 @@
         {{ else }}
         <tr>
           <td
-            colspan="2"
+            colspan="5"
             class="px-6 py-10 text-center text-gray-400 text-sm italic"
           >
             Belum ada data user tersedia.
@@ -737,7 +1160,7 @@
         {{ else }}
         <tr>
           <td
-            colspan="2"
+            colspan="4"
             class="px-6 py-10 text-center text-gray-400 text-sm italic"
           >
             Belum ada data Dokumen tersedia.
@@ -790,7 +1213,7 @@
         {{ else }}
         <tr>
           <td
-            colspan="2"
+            colspan="4"
             class="px-6 py-10 text-center text-gray-400 text-sm italic"
           >
             Belum ada data evidence tersedia.
@@ -857,7 +1280,7 @@
         {{ else }}
         <tr>
           <td
-            colspan="2"
+            colspan="6"
             class="px-6 py-10 text-center text-gray-400 text-sm italic"
           >
             Belum ada data sampah tersedia.
@@ -972,7 +1395,7 @@
         {{ else }}
         <tr>
           <td
-            colspan="2"
+            colspan="6"
             class="px-6 py-10 text-center text-gray-400 text-sm italic"
           >
             Belum ada data kepengurusan tersedia.
@@ -1041,7 +1464,7 @@
         {{ else }}
         <tr>
           <td
-            colspan="2"
+            colspan="6"
             class="px-6 py-10 text-center text-gray-400 text-sm italic"
           >
             Belum ada data transaksi tersedia.

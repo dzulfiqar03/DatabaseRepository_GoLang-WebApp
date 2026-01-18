@@ -5,4 +5,5 @@ func ConnectDatabase() {
 	ConnectGivent()
 	ConnectSeeU()
 	ConnectSiBanksa()
+	ConnectNetabot()
 }
