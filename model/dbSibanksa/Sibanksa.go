@@ -55,10 +55,11 @@ type UserDetail struct {
 	Roles   Roles `gorm:"foreignKey:RolesID"`
 
 	Status             string               `json:"status"`
+	Kepengurusan	   []Kepengurusan       `gorm:"foreignKey:UserDetailID" json:"kepengurusans"`
 	Document_Archivers []Document_Archivers `gorm:"foreignKey:UserDetailID" json:"document_archivers"`
 	Evidence_Archivers []Evidence_Archivers `gorm:"foreignKey:UserDetailID" json:"evidence_archivers"`
 	Jadwal_Pelaksanaan []Jadwal_Pelaksanaan `gorm:"foreignKey:UserDetailID" json:"jadwal_pelaksanaan"`
-	Sampah             []Sampah             `gorm:"foreignKey:UserDetailID" json:"sampah"` // Changed to slice	PencatatanSetoran  []PencatatanSetoran  `gorm:"foreignKey:UserDetailID" json:"pencatatan_setoran"`
+	Sampah             []Sampah             `gorm:"foreignKey:UserDetailID" json:"sampah"`
 	UserTransaction    []UserTransaction    `gorm:"foreignKey:UserDetailID" json:"user_transactions"`
 }
 

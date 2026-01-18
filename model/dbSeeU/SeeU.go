@@ -6,14 +6,14 @@ type User struct {
     Username string    `json:"userName"`
     Email    string    `json:"email"`
     Roles    string    `json:"role"`
-    AllUmkm  AllUmkm `gorm:"foreignKey:UserID" json:"all_umkm"` // Gunakan slice [] jika 1 user bisa punya banyak UMKM
+    AllUmkm  AllUmkm `gorm:"foreignKey:UserID" json:"all_umkm"`
 }
 
 type Provience struct {
     ID     int      `gorm:"primaryKey" json:"id"`
     Code   string   `json:"code"`
     Name   string   `json:"name"`
-    Cities Cities `gorm:"foreignKey:ProvienceID" json:"cities"` // Slice karena 1 provinsi banyak kota
+    Cities Cities `gorm:"foreignKey:ProvienceID" json:"cities"`
 }
 
 func (Provience) TableName() string { return "provinces" }

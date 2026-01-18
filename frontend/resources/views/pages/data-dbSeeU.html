@@ -27,76 +27,206 @@
         <form action="" id="formUser">
           <div class="grid grid-cols-1 gap-x-6 gap-y-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
-              <div class="flex flex-col gap-2">
-                <label class="text-sm font-semibold text-gray-700"
-                  >Email Address</label
-                >
-                <input
-                  type="email"
-                  name="email"
-                  class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-500 outline-none"
-                  placeholder="user@mail.com"
-                  required
-                />
-              </div>
-              <div class="flex flex-col gap-2">
-                <label class="text-sm font-semibold text-gray-700"
-                  >Full Name</label
-                >
-                <input
-                  type="text"
-                  name="fullname"
-                  class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-500 outline-none"
-                  placeholder="Nama Lengkap"
-                  required
-                />
-              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
+                {{ if eq .Title "data-User"}}
+                <div class="flex flex-col gap-2">
+                  <label class="text-sm font-semibold text-gray-700"
+                    >Full Name</label
+                  >
+                  <input
+                    type="text"
+                    name="full_name"
+                    class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                    placeholder="Full Name"
+                    required
+                  />
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label class="text-sm font-semibold text-gray-700" >Username</label
+                  >
+                  <input type="text" name="username" class="border border-gray-300
+                  rounded-lg p-2 focus:ring-2 focus:ring-emerald-500 outline-none" placeholder="Username"
+                  required />
+                </div>
 
-              <div class="flex flex-col gap-2">
-                <label class="text-sm font-semibold text-gray-700"
-                  >Address</label
-                >
-                <input
-                  type="text"
-                  name="address"
-                  class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-500 outline-none"
-                  placeholder="Alamat"
-                  required
-                />
-              </div>
+                <div class="flex flex-col gap-2">
+                  <label class="text-sm font-semibold text-gray-700"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    name="email"
+                    class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                    placeholder="Email"
+                    required
+                  />
+                </div>
 
-              <div class="flex flex-col gap-2">
-                <label class="text-sm font-semibold text-gray-700"
-                  >Nomor Telepon</label
-                >
-                <input
-                  type="text"
-                  name="telephone"
-                  class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-500 outline-none"
-                  placeholder="Nomor Telepon"
-                  required
-                />
-              </div>
+                <div class="flex flex-col gap-2">
+                  <label class="text-sm font-semibold text-gray-700"
+                    >Password</label
+                  >
+                  <input
+                    type="password"
+                    name="password"
+                    class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                    placeholder="Password"
+                    required
+                  />
+                </div>
 
-              <div class="flex flex-col gap-2">
-                <label
-                  class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1.5 ml-1"
-                  >Status</label
-                >
-                <select
-                  id="status"
-                  name="status"
-                  class="w-full h-11 rounded-xl border-gray-200 bg-gray-50 dark:bg-gray-800 dark:text-white text-sm pl-5 focus:ring-4 focus:ring-emerald-500/10 transition-all"
-                >
-                  <option value="">Pilih Status</option>
+                <div class="flex flex-col gap-2">
+                  <label class="text-sm font-semibold text-gray-700"
+                    >Roles</label
+                  >
+                  <select
+                    name="roles"
+                    class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                    required
+                  >
+                    <option value="" disabled selected>Pilih Roles</option>
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
+                  </select>
+                </div>
 
-                  <option value="Pending">Pending</option>
-                  <option value="Pengajuan Verifikasi">
-                    Pengajuan Verifikasi
-                  </option>
-                  <option value="Disetujui">Disetujui</option>
-                  <option value="Tidak Disetujui">Tidak Disetujui</option>
-                </select>
+                {{else if eq .Title "data-Provience"}}
+
+                <div class="flex flex-col gap-2">
+                  <label class="text-sm font-semibold text-gray-700"
+                    >Code</label
+                  >
+                  <input
+                    type="text"
+                    name="code"
+                    class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                    placeholder="Code"
+                    required
+                  />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <label class="text-sm font-semibold text-gray-700"
+                    >Provinces</label
+                  >
+                  <input
+                    type="text"
+                    name="name"
+                    class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                    placeholder="Provinces"
+                    required
+                  />
+                </div>
+
+                {{else if eq .Title "data-Cities"}}
+                <div class="flex flex-col gap-2">
+                  <label class="text-sm font-semibold text-gray-700"
+                    >Cities</label
+                  >
+                  <input
+                    type="text"
+                    name="name"
+                    class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                    placeholder="Cities"
+                    required
+                  />
+                </div>
+
+                {{else if eq .Title "data-Category"}}
+
+                <div class="flex flex-col gap-2">
+                  <label class="text-sm font-semibold text-gray-700"
+                    >Code</label
+                  >
+                  <input
+                    type="text"
+                    name="code"
+                    class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                    placeholder="Code"
+                    required
+                  />
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label class="text-sm font-semibold text-gray-700"
+                    >Name</label
+                  >
+
+                  <select
+                    name="name"
+                    class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                    required
+                  >
+                    <option value="" disabled selected>Pilih Category</option>
+                    <option value="Fashion">Fashion</option>
+                    <option value="Food and Beverage">Food and Beverage</option>
+                    <option value="Handicraft">Handicraft</option>
+                    <option value="Technology">Technology</option>
+                  </select>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label class="text-sm font-semibold text-gray-700"
+                    >Description</label
+                  >
+                  <input
+                    type="text"
+                    name="description"
+                    class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                    placeholder="Description"
+                    required
+                  />
+                </div>
+
+                {{else if eq .Title "data-AllUmkm"}}
+                <div class="flex flex-col gap-2">
+                  <label class="text-sm font-semibold text-gray-700"
+                    >UMKM</label
+                  >
+                  <input
+                    type="text"
+                    name="umkm"
+                    class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                    placeholder="UMKM"
+                    required
+                  />
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label class="text-sm font-semibold text-gray-700"
+                    >Description</label
+                  >
+                  <input
+                    type="text"
+                    name="description"
+                    class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                    placeholder="Description"
+                    required
+                  />
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label class="text-sm font-semibold text-gray-700"
+                    >Address</label
+                  >
+                  <input
+                    type="text"
+                    name="address"
+                    class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                    placeholder="Address"
+                    required
+                  />
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label class="text-sm font-semibold text-gray-700"
+                    >Telephone Number</label
+                  >
+                  <input
+                    type="text"
+                    name="telephone_number"
+                    class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-500 outline-none"
+                    placeholder="Telephone Number"
+                    required
+                  />
+                </div>
+
+                {{end}}
               </div>
             </div>
           </div>

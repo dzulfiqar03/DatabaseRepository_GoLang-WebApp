@@ -39,6 +39,11 @@
 
     {{else if eq $.page "db-givent"}}
     {{template "data-givent" .}}
+
+    {{else if eq $.page "db-netabot"}}
+    {{template "data-netabot" .}}
+    {{else if eq $.page "db-libraryis"}}
+    {{template "data-libraryis" .}}
           {{end}}
         </div>
       </div>

@@ -59,6 +59,8 @@ func Index(c *gin.Context) {
 		"db-sibanksa",
 		"db-givent",
 		"db-seeU",
+		"db-netabot",
+		"db-libraryis",
 	}
 
 	var dataTable = []string{

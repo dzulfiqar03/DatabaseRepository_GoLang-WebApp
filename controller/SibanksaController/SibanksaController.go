@@ -43,11 +43,12 @@ func Index(c *gin.Context) {
 		errUserTransaction != nil {
 		// handle error
 	}
-
 	var dataSidebar = []string{
 		"db-sibanksa",
 		"db-givent",
 		"db-seeU",
+		"db-netabot",
+		"db-libraryis",
 	}
 
 	sections := []TableSection{
